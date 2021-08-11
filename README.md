@@ -1,5 +1,4 @@
-# Attention-MSI
-Source code for research article: "Attentional control of multisensory integration"
+## Source code for research article: "Attentional control of multisensory integration"
 
 #### By Ambra Ferrari and Uta Noppeney
 Published in XXX
