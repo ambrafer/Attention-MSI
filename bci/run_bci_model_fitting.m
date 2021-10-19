@@ -27,24 +27,6 @@ if isempty(currPool)
     end
 end
 
-%% Loading data
-
-expID = 'behav'; % MRI, behav
-
-% Subjects
-if strcmp(expID, 'MRI')
-    subjID = {'sub-MA01';'sub-MA08';'sub-MA53';'sub-MA98';'sub-MA114';'sub-MA117';...
-        'sub-MA124';'sub-MA129';'sub-MA130';'sub-MA132';'sub-MA138';'sub-MA145'};
-elseif strcmp(expID, 'behav')
-    subjID = {'sub-MA01';'sub-MA08';'sub-MA53';'sub-MA98';...
-        'sub-MA103';'sub-MA104';'sub-MA109';'sub-MA114';...
-        'sub-MA115';'sub-MA117';'sub-MA122';...
-        'sub-MA124';'sub-MA125';'sub-MA126';'sub-MA129';'sub-MA130';...
-        'sub-MA132';'sub-MA134';'sub-MA137';'sub-MA138';...
-        'sub-MA142';'sub-MA145';'sub-MA146';'sub-MA147';...
-        'sub-MA149';'sub-MA151';'sub-MA152'};
-end
-
 % number of minima to evaluate with fminsearch
 nmin = 10;
 
@@ -54,12 +36,6 @@ model='bci'; % bci fus segA segV taskRel null
 figure_plot=0;
 
 for iSubj = 1:length(subjID)
-    
-    if strcmp(expID, 'MRI')
-        cd(fullfile('E:\Data\MAMSI_MRI', subjID{iSubj}, 'behav\scanner'));
-    elseif strcmp(expID, 'behav')
-        cd(fullfile('E:\Data\MAMSI_MRI', 'MAMSI_MRI_behav', subjID{iSubj}));
-    end
     
     origData = dir('*Exp_All_Sessions*.mat');
     load(origData.name, 'tdata');
