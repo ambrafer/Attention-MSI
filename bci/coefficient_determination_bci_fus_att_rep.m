@@ -1,7 +1,6 @@
-%% Compute R^2
+%% Compute R^2 (coefficient of determination)
 
 clear;
-close all;
 clc;
 
 % Path to BCI scripts
