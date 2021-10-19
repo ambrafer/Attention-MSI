@@ -7,24 +7,6 @@ clc;
 % Path to BCI scripts
 addpath(genpath('E:\AMBRA\UoB\Exp\misc'));
 
-expID = 'MRI'; % MRI, behav, behav_MRI
-
-if strcmp(expID, 'MRI')
-    cd('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\BCI\single_fit');
-    % Subjects
-    subjID = {'sub-MA01';'sub-MA08';'sub-MA53';'sub-MA98';'sub-MA114';'sub-MA117';...
-        'sub-MA124';'sub-MA129';'sub-MA130';'sub-MA132';'sub-MA138';'sub-MA145'};
-elseif  strcmp(expID, 'behav')
-    cd('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\screening\BCI\single_fit');
-    subjID = {'sub-MA01';'sub-MA08';'sub-MA53';'sub-MA98';...
-        'sub-MA103';'sub-MA104';'sub-MA109';'sub-MA114';...
-        'sub-MA115';'sub-MA117';'sub-MA122';...
-        'sub-MA124';'sub-MA125';'sub-MA126';'sub-MA129';'sub-MA130';...
-        'sub-MA132';'sub-MA134';'sub-MA137';'sub-MA138';...
-        'sub-MA142';'sub-MA145';'sub-MA146';'sub-MA147';...
-        'sub-MA149';'sub-MA151';'sub-MA152'};
-end
-
 load('group_bciSimulations_attmod_best10','group_best_results_mod');
 bci_att = group_best_results_mod;
 clear group_best_results_mod
@@ -50,13 +32,6 @@ R2 = nan(length(subjID),4);
 maxR2 = nan(length(subjID),1);
 
 for iSubj = 1:length(subjID)
-    
-    %% logLike for null model
-    if strcmp(expID, 'MRI')
-        cd(fullfile('E:\AMBRA\UoB\Data\MAMSI_MRI', subjID{iSubj}, 'behav\scanner'));
-    elseif strcmp(expID, 'behav')
-        cd(fullfile('E:\AMBRA\UoB\Data\MAMSI_MRI', 'MAMSI_MRI_behav', subjID{iSubj}));
-    end
     
     origData = dir('*Exp_All_Sessions*.mat');
     load(origData.name, 'tdata');
@@ -159,10 +134,4 @@ end % End of loop over subjects
 
 meanR2 = mean(R2);
 semR2 = std(R2)/sqrt(length(subjID));
-
-if strcmp(expID, 'MRI')
-    save('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\BCI\single_fit\R2.mat','R2');
-elseif strcmp(expID, 'behav')
-    save('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\screening\BCI\single_fit\R2.mat','R2');
-end
 
