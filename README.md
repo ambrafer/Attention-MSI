@@ -1,13 +1,13 @@
-## Source code for research article: "Attentional control of multisensory integration"
+## Source code for research article: "Attention controls multisensory perception via two distinct mechanisms at different levels of the cortical hierarchy"
 
 #### By Ambra Ferrari and Uta Noppeney
 Published in XXX
 
-Cite: Ferrari A, Noppeney U (XXX) Attentional control of multisensory integration. XXX XX(X): XXX.
+Cite: Ferrari A, Noppeney U (XXX) Attention controls multisensory perception via two distinct mechanisms at different levels of the cortical hierarchy. XXX XX(X): XXX.
 
 ## Description
 Folder bci contains the methods for fitting Bayesian Causal Inference models to behavioural data.
-The rest of the functions are for running the behavioural analysis, preprocessing, mvpa, bci, statistics and figure drawing, and some auxiliary functions.
+The rest of the functions are for running the behavioural analysis, preprocessing, mvpa, statistics and figure drawing, and some auxiliary functions.
 
 ## Dependencies
 Code is written in MATLAB, tested on MATLAB R2016a.
