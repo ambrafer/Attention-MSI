@@ -6,7 +6,7 @@ Published in XXX
 Cite: Ferrari A, Noppeney U (XXX) Attention controls multisensory perception via two distinct mechanisms at different levels of the cortical hierarchy. XXX XX(X): XXX.
 
 ## Description
-Folder bci contains the methods for fitting Bayesian Causal Inference models to behavioural data.
+Folder "bci" contains the methods for fitting Bayesian Causal Inference models to behavioural data.
 The rest of the functions are for running the behavioural analysis, preprocessing, mvpa, statistics and figure drawing, and some auxiliary functions.
 
 ## Dependencies
