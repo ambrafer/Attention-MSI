@@ -79,14 +79,8 @@ for iSub=1:nperm
     sets{iSub} = [-1 1];
 end
 
-if strcmp(expID, 'MRI')
-    [a, b, c, d, e, f, g, h, i, j, k, l] = ndgrid(sets{:});
-    ToPermute = [a(:), b(:), c(:), d(:), e(:), f(:), g(:), h(:), i(:), j(:),k(:), l(:)];    
-elseif strcmp(expID, 'behav')
-    [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t] = ndgrid(sets{:});
-    ToPermute = [a(:), b(:), c(:), d(:), e(:), f(:), g(:), h(:), i(:), j(:),...
-        k(:), l(:), m(:), n(:), o(:), p(:), q(:), r(:), s(:), t(:)];
-end
+[a, b, c, d, e, f, g, h, i, j, k, l] = ndgrid(sets{:});
+ToPermute = [a(:), b(:), c(:), d(:), e(:), f(:), g(:), h(:), i(:), j(:),k(:), l(:)];    
 
 mainAtt=mainAtt(1:nperm);
 mainRep=mainRep(1:nperm);
