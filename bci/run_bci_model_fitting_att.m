@@ -27,25 +27,6 @@ if isempty(currPool)
     end
 end
 
-%% Loading data
-
-% Subjects
-expID = 'MRI'; % MRI, behav
-
-% Subjects
-if strcmp(expID, 'MRI')
-    subjID = {'sub-MA01';'sub-MA08';'sub-MA53';'sub-MA98';'sub-MA114';'sub-MA117';...
-        'sub-MA124';'sub-MA129';'sub-MA130';'sub-MA132';'sub-MA138';'sub-MA145'};
-elseif strcmp(expID, 'behav')
-    subjID = {'sub-MA01';'sub-MA08';'sub-MA53';'sub-MA98';...
-        'sub-MA103';'sub-MA104';'sub-MA109';'sub-MA114';...
-        'sub-MA115';'sub-MA117';'sub-MA122';...
-        'sub-MA124';'sub-MA125';'sub-MA126';'sub-MA129';'sub-MA130';...
-        'sub-MA132';'sub-MA134';'sub-MA137';'sub-MA138';...
-        'sub-MA142';'sub-MA145';'sub-MA146';'sub-MA147';...
-        'sub-MA149';'sub-MA151';'sub-MA152'};
-end
-
 % number of minima to evaluate with fminsearch
 nmin = 10;
 
@@ -61,12 +42,6 @@ group_best_results_mod = cell(length(subjID),1);
 figure_plot=0;
 
 for iSubj = 1:length(subjID)
-    
-    if strcmp(expID, 'MRI')
-        cd(fullfile('E:\AMBRA\UoB\Data\MAMSI_MRI', subjID{iSubj}, 'behav\scanner'));
-    elseif strcmp(expID, 'behav')
-        cd(fullfile('E:\AMBRA\UoB\Data\MAMSI_MRI', 'MAMSI_MRI_behav', subjID{iSubj}));
-    end
     
     origData = dir('*Exp_All_Sessions*.mat');
     load(origData.name, 'tdata');
@@ -313,11 +288,5 @@ end % End of loop over subjects
 %% Saving subject specific bci simulations
 
 fprintf('\n\nSaving data...\n\n');
-if strcmp(expID, 'MRI')
-    cd('E:\Data\MAMSI_MRI\group\behav\BCI\single_fit');
-elseif  strcmp(expID, 'behav')
-    cd('E:\Data\MAMSI_MRI\group\behav\screening\BCI\single_fit');
-end
-
 save(['group_' model 'Simulations_attmod_best10'], ...
     'subjID', 'parameterNames', 'group_best10_results_mod', 'group_best_results_mod');
