@@ -1,1 +1,2 @@
 This folder contains methods for fitting Bayesian Causal Inference models to behavioural data.
+"run_bci_model_fitting" Matlab scripts call "fitModel" functions; the remaining scripts evaluate and summarize the results.
