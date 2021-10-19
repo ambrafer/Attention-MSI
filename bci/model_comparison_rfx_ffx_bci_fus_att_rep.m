@@ -9,19 +9,6 @@ clc;
 
 addpath(genpath('E:\AMBRA\UoB\Programs\spm12'));
 
-expID = 'MRI'; % MRI, behav, behav_MRI
-
-% We are in the data directory
-rootPath = pwd;
-
-if strcmp(expID, 'MRI')
-    cd('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\BCI\single_fit');
-elseif strcmp(expID, 'behav')
-    cd('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\screening\BCI\single_fit');
-elseif strcmp(expID, 'behav_MRI')
-    cd('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\screening\MRI_subj\BCI\single_fit');
-end
-
 load('group_bci_aic_bic_attmod.mat')
 bci_att_bic_group = bic_group_mod;
 load('group_aic_bic.mat')
@@ -126,10 +113,3 @@ set(gca,'FontSize', 12);
 
 % ffx
 groupBIC = sum(ffx_comp);
-
-%% Save
-
-cd('E:\AMBRA\UoB\Data\MAMSI_MRI\group\behav\BCI');
-saveas(fig1, 'group_pxp_6mod_plot_av09_MRI', 'emf');
-saveas(fig2, 'group_bicREL_6mod_plot_av09_MRI', 'emf');
-save('rfx_ffx_6mod.mat','rfx_bciA_bcinoA_fusA_fusnoA_fusR_fusRA', 'rfx_results', 'ffx_comp');
