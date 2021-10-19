@@ -7,7 +7,7 @@ Cite: Ferrari A, Noppeney U (XXX) Attention controls multisensory perception via
 
 ## Description
 Folder "bci" contains the methods for fitting Bayesian Causal Inference models to behavioural data.
-The rest of the functions are for running the behavioural analysis, preprocessing, mvpa, statistics and figure drawing, and some auxiliary functions.
+The rest of the functions are for running the behavioural analysis, preprocessing, mvpa, statistics and figure drawing.
 
 ## Dependencies
 Code is written in MATLAB, tested on MATLAB R2016a.
