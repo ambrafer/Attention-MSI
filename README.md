@@ -1,9 +1,9 @@
 ## Source code for research article: "Attention controls multisensory perception via two distinct mechanisms at different levels of the cortical hierarchy"
 
 #### By Ambra Ferrari and Uta Noppeney
-Published in XXX
+Published in <a href="https://doi.org/10.1371/journal.pbio.3001465" rel="nofollow">Plos Biology</a>
 
-Cite: Ferrari A, Noppeney U (XXX) Attention controls multisensory perception via two distinct mechanisms at different levels of the cortical hierarchy. XXX XX(X): XXX.
+Cite: Ferrari A, Noppeney U. Attention controls multisensory perception via two distinct mechanisms at different levels of the cortical hierarchy. PLoS Biol. 2021 Nov 18;19(11):e3001465. doi: 10.1371/journal.pbio.3001465. PMID: 34793436.
 
 ## Description
 Folder "bci" contains the methods for fitting Bayesian Causal Inference models to behavioural data.
